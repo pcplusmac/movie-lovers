@@ -1,8 +1,16 @@
-document.addEventListener('DOMContendLoaded',event => init(event))
-function init(event){
+document.addEventListener('DOMContendLoaded',() => init())
+function init(){
     fetch("https://swapi.dev/api/people")
         .then(resp => resp.json())
-        .then(data => console.log(data))
+        .then(data => renderPage(data))
 }
 
-   init()
+function renderPage(data){
+    let ul = document.querySelector("#display-list")
+    data.results.forEach(person => {
+        let li = document.createElement("li")
+        li.innerText= person
+        ul.append(li)
+    })
+}
+init()
