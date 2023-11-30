@@ -1,22 +1,43 @@
-document.addEventListener('DOMContendLoaded',() => init())
-function init(){
-    let request = "https://swapi.dev/api/people"
+document.addEventListener('DOMContendLoaded', () => init())
+
+let num = Math.floor(Math.random() * 82)
+function init() {
+
+    let request = `https://swapi.dev/api/people/`
     fetch(request)
         .then(resp => resp.json())
-        .then(data => {
-            console.log(data)
-            renderPage(data.results)})
+        .then(people => {
+            
+            console.log(people,people.results)
+            renderPage(people.results) 
+        })
 }
 
-function renderPage(array){
-    let ul = document.querySelector("#display-list")
-    array.forEach(person => {
-        let li = document.createElement("li")
-        li.innerText= `${person.name}, ${person.height},${person.gender}`
-        
-        ul.append(li)
-    })
+function renderPage(data) {
+    
+    for (const person of data) {
+
+    
+    let ul = document.querySelector("#cast-list")
+
+    let character = document.createElement("li")
+    
+    character.innerHTML = `
+        <div>
+        <p>${person.name}</p>
+             
+              
+        </div>        
+    `
+
+    ul.appendChild(character)
+    }
+
 }
 
+{/* <p>${person.height}</p>
+        <p>${person.gender}</p>
+        <p></p>  */}
 
 init()
+// function

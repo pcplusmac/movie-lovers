@@ -10,7 +10,13 @@ div.display-container {
 }
 div.form-container {
     width: auto;
-    height:100px;
+    height:auto;
     border: dotted,1px,black;
     background-color: blanchedalmond;
+}
+
+.center {
+    margin: 0;
+    position: absolute;
+    left: 50%;
 }

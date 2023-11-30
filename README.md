@@ -11,4 +11,5 @@ information of star war movies including actors, tools, files, etc.
 -- this is to set the style of html elements
 
 ## index.js
--- this is ...
+-- this is the main javaScript file to communicate with server to either send or receive the data for satisfying the client's requests. 
+-- this file contain the code for enabling the webpage to communicate with clients via some events such as: click, form submit, and etc. 

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="./style.css">
     <script defer src="./index.js"></script>
 </head>
+
 <body>
     <header>
         <h1>Star Wars</h1>
@@ -14,23 +16,59 @@
     </header>
     <main>
         <div class="form-container">
-            <h4>input your query below to get the information you are interested in:  </h4>
+            <h4>input your query below to get the information you are interested in: </h4>
             <form id="user-query">
-                <label for="actor-name">Actor/Actress: <input type="text" id="actor-name" placeholder="his/her name is ..."></label>
-                <button type="submit">search</button>
-                <button type=""submit>search randomly</button>
+                <label for="actor-name">search your favorite actor/actress: 
+                    <input type="text" id="actor-name"
+                        placeholder="his/her name is ...">
+                </label>
+                
+                
                 <hr>
-                <label for="film-name">The film you like: <input type="text" id="film-name" placeholder="The film's name is ..."></label>
-                <button type="submit">search</button>
-                <button type=""submit>search randomly</button>
-
+                <label for="film-name">search your favourite film: 
+                    <input type="text" id="film-name"
+                        placeholder="The film's name is ...">
+                </label>
+                
+                <hr>
+                <label for="starship-name">search your favourite starship: 
+                    <input type="text" id="starship-name"
+                        placeholder="put it's name here ...">
+                </label>
+                <hr>
+                <label for="vehicle-name">search your favourite vehicle : 
+                    <input type="text" id="vehicle-name"
+                        placeholder="The film's name is ...">
+                </label>
+                <hr>
+                <label for="random-search">choose on what you like to know randomly: 
+                    <select name="category" id="random-search">
+                        <option value="people">1: search actor/actress</option>
+                        <option value="films">2: search film</option>
+                        <option value="starships">3: search starship</option>
+                        <option value="vehicles">4: search vehicle</option>
+                    </select>
+                    
+                </label><br>
+                
+                <button id="formSubmitBtn" type="submit" class="center">search</button>
+                
             </form>
         </div>
         <hr>
         <div class="display-container">
-            <h4>The most related information we found for your: </h4>
-            <ul id="display-list"></ul>
-            
+            <div id="cast-container">
+                <h4>cast: </h4>
+                <ul id="cast-list"></ul>
+                
+            </div>
+            <div id="films-container">
+                <h4>Films:</h4>
+                <ul id="film-list">
+
+                </ul>
+            </div>
+
         </div>
 
     </main>
@@ -38,4 +76,5 @@
 
     </footer>
 </body>
+
 </html>
