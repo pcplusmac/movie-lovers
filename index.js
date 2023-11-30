@@ -1,4 +1,4 @@
-document.addEventListener('DOMContendLoaded', () => init())
+document.addEventListener('DOMContentLoaded', () => init())
 
 let num = Math.floor(Math.random() * 82)
 function init() {
