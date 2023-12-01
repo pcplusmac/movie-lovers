@@ -21,14 +21,16 @@ function renderPage(data) {
     let ul = document.querySelector("#cast-list")
 
     let character = document.createElement("li")
+
+    character.innerText = person.name
     
-    character.innerHTML = `
-        <div>
-        <p>${person.name}</p>
+    // character.innerHTML = `
+    //     <div>
+    //     <p>${person.name}</p>
              
               
-        </div>        
-    `
+    //     </div>        
+    // `
 
     ul.appendChild(character)
     }
@@ -39,5 +41,5 @@ function renderPage(data) {
         <p>${person.gender}</p>
         <p></p>  */}
 
-init()
-// function
+
+function 
