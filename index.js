@@ -1,5 +1,12 @@
 // document.addEventListener('DOMContentLoaded', () => init())
 
+const form = document.querySelector('#form-container')
+form.addEventListener('DOMContentLoaded',event =>formDataHandler(event))
+
+function formDataHandler(data){
+    
+}
+
 let num = Math.floor(Math.random() * 82)
 function init() {
 
