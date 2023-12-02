@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => init())
+// document.addEventListener('DOMContentLoaded', () => init())
 
 let num = Math.floor(Math.random() * 82)
 function init() {
@@ -41,5 +41,5 @@ function renderPage(data) {
         <p>${person.gender}</p>
         <p></p>  */}
 
-
+init()
 // function 
