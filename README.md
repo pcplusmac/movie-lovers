@@ -19,7 +19,7 @@ information of star war movies including actors, tools, files, etc.
 -- the function to use the data input by user to get the data from server accordinging, then diplay on the feedback pool. 
 ## the functions init automatically get the pre-start data. 
 ###getPeople()
-getFilms()
+###getFilms()
 renderPeople()
 renderFilms()
 init()
