@@ -1,10 +1,15 @@
 // document.addEventListener('DOMContentLoaded', () => init())
 
-const form = document.querySelector('#form-container')
-form.addEventListener('DOMContentLoaded',event =>formDataHandler(event))
+const form = document.querySelector('#formQuery')
+form.addEventListener('submit',event =>{
+    event.preventDefault()
+    // console.log(event)
+    formDataHandler(event.target)
+})
 
-function formDataHandler(data){
-    
+function formDataHandler(dataArr){
+
+
 }
 
 let num = Math.floor(Math.random() * 82)
@@ -25,7 +30,7 @@ function renderPage(data) {
     for (const person of data) {
 
     
-    let ul = document.querySelector("#cast-list")
+    let ulpeople = document.querySelector("#people-list")
 
     let character = document.createElement("li")
 
@@ -39,7 +44,7 @@ function renderPage(data) {
     //     </div>        
     // `
 
-    ul.appendChild(character)
+    ulpeople.appendChild(character)
     }
 
 }
