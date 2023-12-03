@@ -13,3 +13,14 @@ information of star war movies including actors, tools, files, etc.
 ## index.js
 -- this is the main javaScript file to communicate with server to either send or receive the data for satisfying the client's requests. 
 -- this file contain the code for enabling the webpage to communicate with clients via some events such as: click, form submit, and etc. 
+
+# funcitons summary:
+## formDataHandler()
+-- the function to use the data input by user to get the data from server accordinging, then diplay on the feedback pool. 
+## the functions init automatically get the pre-start data. 
+getPeople()
+getFilms()
+renderPeople()
+renderFilms()
+init()
+-- it is the place to keep all functions that get the pre-start data ready from server to be displayed on page
