@@ -1,4 +1,4 @@
-// document.addEventListener('DOMContentLoaded', () => init())
+document.addEventListener('DOMContentLoaded', () => init())
 let num = Math.floor(Math.random() * 82)
 
 const form = document.querySelector('#formQuery')
@@ -69,40 +69,19 @@ function renderPeople(data) {
 
     
     let ulpeople = document.querySelector("#people-list")
-
     let character = document.createElement("li")
-
     character.innerText = person.name
     
-    // character.innerHTML = `
-    //     <div>
-    //     <p>${person.name}</p>
-             
-              
-    //     </div>        
-    // `
-
-   
     let showBtn = createItemShowBtn()
-    showBtn.addEventListener('click',person => showPerson(person))
+    showBtn.addEventListener('click',person => {
+        //TODO: complete teh show logic here using person as parameter
+    })
+
     character.appendChild(showBtn)
     ulpeople.appendChild(character)
     }
-
-
 }
-
-function createItemShowBtn () {
-    let btn = document.createElement("button")
-    btn.id = "show-details"
-    btn.textContent = "show"
-    return btn
-}
-
-function showPerson(item) {
-    console.log(person)
-}
-
+ 
 function renderFilms(data){
     // console.log(data)
     data.forEach( film => {
@@ -110,19 +89,35 @@ function renderFilms(data){
         let ulfilms = document.querySelector("#films-list")
         let lifilm = document.createElement('li')
         lifilm.innerText = film.title 
+
+        let showBtn = createItemShowBtn()
+        showBtn.addEventListener('click', film => {
+            //TODO: complete teh show logic here using film as parameter
+        })
+        lifilm.appendChild(showBtn)
+
         ulfilms.appendChild(lifilm)
     }
         
     )
 }
+
 function renderVehicles (data){
-    console.log("vehicles informaiton: ",data)
+    // console.log("vehicles informaiton: ",data)
     data.forEach(
         vehicle => {
             
             let ulvehicles = document.querySelector("#vehicles-list")
             let livehicle = document.createElement('li')
             livehicle.innerText=vehicle.name
+
+            let showBtn = createItemShowBtn()
+            livehicle.appendChild(showBtn)
+            showBtn.addEventListener('click',(vehicle)=> {
+                //TODO: complete the loic for showing item details
+            })
+
+
             ulvehicles.appendChild(livehicle)
         }
     )
@@ -135,6 +130,13 @@ function renderStarships (data){
         let ulstarships = document.querySelector("#starships-list")
         let listarship = document.createElement('li')
         listarship.innerText = starship.name
+
+        let showBtn = createItemShowBtn()
+        showBtn.addEventListener('click',(starship)=> {
+            //TODO: complete the loic for showing item details
+        })
+
+        listarship.appendChild(showBtn)
         ulstarships.appendChild(listarship)
     }
 
@@ -149,6 +151,13 @@ function renderPlanets (data){
         let ulplanets = document.querySelector("#planets-list")
         let liplanet = document.createElement('li')
         liplanet.innerText = planet.name
+
+        let showBtn = createItemShowBtn()
+        showBtn.addEventListener('click',(planet)=> {
+            //TODO: complete the loic for showing item details
+        })
+
+        liplanet.appendChild(showBtn)
         ulplanets.appendChild(liplanet)
     }
 
@@ -160,5 +169,12 @@ function renderPlanets (data){
         <p>${person.gender}</p>
         <p></p>  */}
 
-init()
-// function 
+// init()
+
+
+function createItemShowBtn () {
+    let btn = document.createElement("button")
+    btn.id = "show-details"
+    btn.textContent = "show"
+    return btn
+}
