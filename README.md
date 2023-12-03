@@ -18,9 +18,9 @@ information of star war movies including actors, tools, files, etc.
 ## formDataHandler()
 -- the function to use the data input by user to get the data from server accordinging, then diplay on the feedback pool. 
 ## the functions init automatically get the pre-start data. 
-###getPeople()
-###getFilms()
-renderPeople()
-renderFilms()
-init()
+### getPeople()
+### getFilms()
+### renderPeople()
+### renderFilms()
+### init()
 -- it is the place to keep all functions that get the pre-start data ready from server to be displayed on page
