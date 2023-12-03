@@ -25,7 +25,7 @@ information of star war movies including actors, tools, files, etc.
 ### getStarships()
 ### getPlanets()
 
--- render the page with the data passed in.
+-- the methods below are to render the page with the data passed in.
 ### renderPeople()
 ### renderFilms()
 ### renderVehicles()
