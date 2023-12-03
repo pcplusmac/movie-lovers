@@ -1,4 +1,5 @@
 // document.addEventListener('DOMContentLoaded', () => init())
+let num = Math.floor(Math.random() * 82)
 
 const form = document.querySelector('#formQuery')
 form.addEventListener('submit',event =>{
@@ -12,10 +13,13 @@ function formDataHandler(dataArr){
 
 }
 
-let num = Math.floor(Math.random() * 82)
+
 function init() {
     getPeople()
     getFilms()
+    getVehicles()
+    getStarships()
+    getPlanets()
     
 }
 
@@ -40,14 +44,23 @@ function getFilms(){
         })
 
 }
-function getVehicles(){
+async function getVehicles(){
+    const reposnse = await fetch("https://swapi.dev/api/vehicles/")
+    const vehicles = await reposnse.json()
+    renderVehicles(vehicles.results)
 
 }
-function getStarships(){
+async function getStarships(){
+    const reposnse = await fetch("https://swapi.dev/api/starships/")
+    const starships = await reposnse.json()
+    renderStarships(starships.results)
 
 }
-function getPlanets()
+async function getPlanets()
 {
+    const response = await fetch("https://swapi.dev/api/planets/")
+    const planets = await response.json()
+    renderPlanets(planets.results)
 
 }
 function renderPeople(data) {
@@ -87,13 +100,44 @@ function renderFilms(data){
         
     )
 }
-function renderVehicles (){
+function renderVehicles (data){
+    console.log("vehicles informaiton: ",data)
+    data.forEach(
+        vehicle => {
+            
+            let ulvehicles = document.querySelector("#vehicles-list")
+            let livehicle = document.createElement('li')
+            livehicle.innerText=vehicle.name
+            ulvehicles.appendChild(livehicle)
+        }
+    )
     
 }
-function renderStarships (){
+function renderStarships (data){
+    console.log("ships: ",data)
+    data.forEach( starship => {
+        
+        let ulstarships = document.querySelector("#starships-list")
+        let listarship = document.createElement('li')
+        listarship.innerText = starship.name
+        ulstarships.appendChild(listarship)
+    }
+
+    )
     
+
 }
-function renderPlanets (){
+function renderPlanets (data){
+    console.log("planet information",data)
+    data.forEach( planet => {
+        
+        let ulplanets = document.querySelector("#planets-list")
+        let liplanet = document.createElement('li')
+        liplanet.innerText = planet.name
+        ulplanets.appendChild(liplanet)
+    }
+
+    )
     
 }
 
