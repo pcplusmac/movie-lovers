@@ -40,4 +40,4 @@ information of star war movies including actors, tools, files, etc.
 ## other functions 
 ### createItemShowBtn() 
 -- this funciton is the reusable function to help with generting the button node element in js for html element. 
---  
+
