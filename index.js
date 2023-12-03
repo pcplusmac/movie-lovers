@@ -82,11 +82,25 @@ function renderPeople(data) {
     //     </div>        
     // `
 
+   
+    let showBtn = createItemShowBtn()
+    showBtn.addEventListener('click',person => showPerson(person))
+    character.appendChild(showBtn)
     ulpeople.appendChild(character)
-    
     }
 
 
+}
+
+function createItemShowBtn () {
+    let btn = document.createElement("button")
+    btn.id = "show-details"
+    btn.textContent = "show"
+    return btn
+}
+
+function showPerson(item) {
+    console.log(person)
 }
 
 function renderFilms(data){
