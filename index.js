@@ -40,7 +40,16 @@ function getFilms(){
         })
 
 }
+function getVehicles(){
 
+}
+function getStarships(){
+
+}
+function getPlanets()
+{
+
+}
 function renderPeople(data) {
     
     for (const person of data) {
@@ -77,6 +86,15 @@ function renderFilms(data){
     }
         
     )
+}
+function renderVehicles (){
+    
+}
+function renderStarships (){
+    
+}
+function renderPlanets (){
+    
 }
 
 {/* <p>${person.height}</p>

@@ -15,7 +15,8 @@ information of star war movies including actors, tools, files, etc.
 -- this file contain the code for enabling the webpage to communicate with clients via some events such as: click, form submit, and etc. 
 
 # funcitons summary:
-## formDataHandler()
+## funcitons for interact with user input 
+### formDataHandler()
 -- the function to use the data input by user to get the data from server accordinging, then diplay on the feedback pool. 
 ## the functions init automatically get the pre-start data. 
 -- the methods below get the data from server the pass to render as parameter
