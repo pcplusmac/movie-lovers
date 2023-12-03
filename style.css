@@ -1,6 +1,23 @@
+body {
+    background-color: rgb(25, 36, 187);
+    color: whitesmoke;
+}
 h1 {
     text-align: center;
     margin: auto;
+}
+div.pool-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    background-image: url("https://media.istockphoto.com/id/1453838363/photo/lightsaber-with-a-green-light-in-a-dark-room.webp?b=1&s=170667a&w=0&k=20&c=00GUjmglzHLMFsDwQuun42m61Hs1Er1zQNt2CFct7YQ=");
+    
+
+}
+div.pool {
+    width: 18%;
+    height: auto;
+    border: 1px,dotted,black;
+    
 }
 div.display-container {
     width: 100%;
