@@ -77,6 +77,225 @@
         "https://swapi.dev/api/films/6/"
       ],
       "id": 6
+    },
+    {
+      "name": "Darth Vader",
+      "gender": "male",
+      "height": "202",
+      "planet": "https://swapi.dev/api/planets/1/",
+      "films": [
+        "https://swapi.dev/api/films/1/",
+        "https://swapi.dev/api/films/2/",
+        "https://swapi.dev/api/films/3/",
+        "https://swapi.dev/api/films/6/"
+      ],
+      "id": 7
+    },
+    {
+      "name": "R2-D2",
+      "gender": "n/a",
+      "height": "96",
+      "planet": "https://swapi.dev/api/planets/8/",
+      "films": [
+        "https://swapi.dev/api/films/1/",
+        "https://swapi.dev/api/films/2/",
+        "https://swapi.dev/api/films/3/",
+        "https://swapi.dev/api/films/4/",
+        "https://swapi.dev/api/films/5/",
+        "https://swapi.dev/api/films/6/"
+      ],
+      "id": 8
+    },
+    {
+      "name": "Darth Vader",
+      "gender": "male",
+      "height": "202",
+      "planet": "https://swapi.dev/api/planets/1/",
+      "films": [
+        "https://swapi.dev/api/films/1/",
+        "https://swapi.dev/api/films/2/",
+        "https://swapi.dev/api/films/3/",
+        "https://swapi.dev/api/films/6/"
+      ],
+      "id": 9
+    },
+    {
+      "name": "Darth Vader",
+      "gender": "male",
+      "height": "202",
+      "planet": "https://swapi.dev/api/planets/1/",
+      "films": [
+        "https://swapi.dev/api/films/1/",
+        "https://swapi.dev/api/films/2/",
+        "https://swapi.dev/api/films/3/",
+        "https://swapi.dev/api/films/6/"
+      ],
+      "id": 10
+    },
+    {
+      "name": "Leia Organa",
+      "gender": "female",
+      "height": "150",
+      "planet": "https://swapi.dev/api/planets/2/",
+      "films": [
+        "https://swapi.dev/api/films/1/",
+        "https://swapi.dev/api/films/2/",
+        "https://swapi.dev/api/films/3/",
+        "https://swapi.dev/api/films/6/"
+      ],
+      "id": 11
+    },
+    {
+      "name": "Jabba Desilijic Tiure",
+      "gender": "hermaphrodite",
+      "height": "175",
+      "planet": "https://swapi.dev/api/planets/24/",
+      "films": [
+        "https://swapi.dev/api/films/1/",
+        "https://swapi.dev/api/films/3/",
+        "https://swapi.dev/api/films/4/"
+      ],
+      "id": 12
+    },
+    {
+      "name": "Wedge Antilles",
+      "gender": "male",
+      "height": "170",
+      "planet": "https://swapi.dev/api/planets/22/",
+      "films": [
+        "https://swapi.dev/api/films/1/",
+        "https://swapi.dev/api/films/2/",
+        "https://swapi.dev/api/films/3/"
+      ],
+      "id": 13
+    },
+    {
+      "name": "Jek Tono Porkins",
+      "gender": "male",
+      "height": "180",
+      "planet": "https://swapi.dev/api/planets/26/",
+      "films": [
+        "https://swapi.dev/api/films/1/"
+      ],
+      "id": 14
+    },
+    {
+      "name": "IG-88",
+      "gender": "none",
+      "height": "200",
+      "planet": "https://swapi.dev/api/planets/28/",
+      "films": [
+        "https://swapi.dev/api/films/2/"
+      ],
+      "id": 15
+    },
+    {
+      "name": "Bossk",
+      "gender": "male",
+      "height": "190",
+      "planet": "https://swapi.dev/api/planets/29/",
+      "films": [
+        "https://swapi.dev/api/films/2/"
+      ],
+      "id": 16
+    },
+    {
+      "name": "Lando Calrissian",
+      "gender": "male",
+      "height": "177",
+      "planet": "https://swapi.dev/api/planets/30/",
+      "films": [
+        "https://swapi.dev/api/films/2/",
+        "https://swapi.dev/api/films/3/"
+      ],
+      "id": 17
+    },
+    {
+      "name": "Lobot",
+      "gender": "male",
+      "height": "175",
+      "planet": "https://swapi.dev/api/planets/6/",
+      "films": [
+        "https://swapi.dev/api/films/2/"
+      ],
+      "id": 18
+    },
+    {
+      "name": "Nute Gunray",
+      "gender": "male",
+      "height": "191",
+      "planet": "https://swapi.dev/api/planets/18/",
+      "films": [
+        "https://swapi.dev/api/films/4/",
+        "https://swapi.dev/api/films/5/",
+        "https://swapi.dev/api/films/6/"
+      ],
+      "id": 19
+    },
+    {
+      "name": "Padmé Amidala",
+      "gender": "female",
+      "height": "185",
+      "planet": "https://swapi.dev/api/planets/8/",
+      "films": [
+        "https://swapi.dev/api/films/4/",
+        "https://swapi.dev/api/films/5/",
+        "https://swapi.dev/api/films/6/"
+      ],
+      "id": 20
+    },
+    {
+      "name": "Jar Jar Binks",
+      "gender": "male",
+      "height": "196",
+      "planet": "https://swapi.dev/api/planets/8/",
+      "films": [
+        "https://swapi.dev/api/films/4/",
+        "https://swapi.dev/api/films/5/"
+      ],
+      "id": 21
+    },
+    {
+      "name": "Darth Maul",
+      "gender": "male",
+      "height": "175",
+      "planet": "https://swapi.dev/api/planets/36/",
+      "films": [
+        "https://swapi.dev/api/films/4/"
+      ],
+      "id": 22
+    },
+    {
+      "name": "Bib Fortuna",
+      "gender": "male",
+      "height": "180",
+      "planet": "https://swapi.dev/api/planets/37/",
+      "films": [
+        "https://swapi.dev/api/films/3/"
+      ],
+      "id": 23
+    },
+    {
+      "name": "Ayla Secura",
+      "gender": "female",
+      "height": "178",
+      "planet": "https://swapi.dev/api/planets/37/",
+      "films": [
+        "https://swapi.dev/api/films/4/",
+        "https://swapi.dev/api/films/5/",
+        "https://swapi.dev/api/films/6/"
+      ],
+      "id": 24
+    },
+    {
+      "name": "Ratts Tyerel",
+      "gender": "male",
+      "height": "79",
+      "planet": "https://swapi.dev/api/planets/38/",
+      "films": [
+        "https://swapi.dev/api/films/4/"
+      ],
+      "id": 25
     }
   ],
   "films": [],

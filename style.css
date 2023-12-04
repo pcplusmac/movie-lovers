@@ -23,11 +23,17 @@ div.pool {
     color: #000;
     
 }
-div.display-container {
+div.process-container {
     width: 100%;
-    height: 600px;
+    height: auto;
     border: solid, 1px, black;
-    background-image: linear-gradient(180deg, red, yellow);  ;
+    font-size: larger;
+    font-weight: 600;
+    font-style: italic;
+    color:brown;
+    background-repeat: repeat-y;
+    background-size: cover;
+    background-image: url("https://media.istockphoto.com/id/1437048444/photo/stars-background-space-galaxy.webp?b=1&s=170667a&w=0&k=20&c=AJLOKVnS_TNiLyMbu06zwGxAU1-OzI7p3cIBoqJZESc=");
 }
 div.form-container {
     width: auto;
