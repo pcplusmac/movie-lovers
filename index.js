@@ -20,7 +20,7 @@ function loadingFormHandler(dataArr){
 
 const formConfirm = document.querySelector("#form-confirming")
 formConfirm.addEventListener('submit', confirmingFormHandler)
-formConfirm.reset()
+// formConfirm.reset()
 function  confirmingFormHandler(event) {
     event.preventDefault()
 
