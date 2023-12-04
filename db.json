@@ -1,18 +1,86 @@
 {
-  "people":[
-    
+  "people": [
+    {
+      "name": "Luke Skywalker",
+      "gender": "male",
+      "height": "172",
+      "planet": "https://swapi.dev/api/planets/1/",
+      "films": [
+        "https://swapi.dev/api/films/1/",
+        "https://swapi.dev/api/films/2/",
+        "https://swapi.dev/api/films/3/",
+        "https://swapi.dev/api/films/6/"
+      ],
+      "id": 1
+    },
+    {
+      "name": "Luke Skywalker",
+      "gender": "male",
+      "height": "172",
+      "planet": "https://swapi.dev/api/planets/1/",
+      "films": [
+        "https://swapi.dev/api/films/1/",
+        "https://swapi.dev/api/films/2/",
+        "https://swapi.dev/api/films/3/",
+        "https://swapi.dev/api/films/6/"
+      ],
+      "id": 2
+    },
+    {
+      "name": "C-3PO",
+      "gender": "n/a",
+      "height": "167",
+      "planet": "https://swapi.dev/api/planets/1/",
+      "films": [
+        "https://swapi.dev/api/films/1/",
+        "https://swapi.dev/api/films/2/",
+        "https://swapi.dev/api/films/3/",
+        "https://swapi.dev/api/films/4/",
+        "https://swapi.dev/api/films/5/",
+        "https://swapi.dev/api/films/6/"
+      ],
+      "id": 3
+    },
+    {
+      "name": "Owen Lars",
+      "gender": "male",
+      "height": "178",
+      "planet": "https://swapi.dev/api/planets/1/",
+      "films": [
+        "https://swapi.dev/api/films/1/",
+        "https://swapi.dev/api/films/5/",
+        "https://swapi.dev/api/films/6/"
+      ],
+      "id": 4
+    },
+    {
+      "name": "Leia Organa",
+      "gender": "female",
+      "height": "150",
+      "planet": "https://swapi.dev/api/planets/2/",
+      "films": [
+        "https://swapi.dev/api/films/1/",
+        "https://swapi.dev/api/films/2/",
+        "https://swapi.dev/api/films/3/",
+        "https://swapi.dev/api/films/6/"
+      ],
+      "id": 5
+    },
+    {
+      "name": "Anakin Skywalker",
+      "gender": "male",
+      "height": "188",
+      "planet": "https://swapi.dev/api/planets/1/",
+      "films": [
+        "https://swapi.dev/api/films/4/",
+        "https://swapi.dev/api/films/5/",
+        "https://swapi.dev/api/films/6/"
+      ],
+      "id": 6
+    }
   ],
-  "films":[
-    
-  ],
-  "vehicles":[
-
-  ],
-  "starships":[
-
-  ],
-  "planets":[
-    
-  ]
-  
+  "films": [],
+  "vehicles": [],
+  "starships": [],
+  "planets": []
 }

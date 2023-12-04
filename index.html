@@ -14,7 +14,7 @@
         <h1>Star Wars</h1>
         <div class="form-container">
             <!-- <h4>input your query below to get the information you are interested in: </h4> -->
-            <form id="form-query">
+            <form id="form-loading-data">
                
                 <label for="selected-search">choose your favorite search: </label><br>
                 <select name="category" id="selected-search">
@@ -63,17 +63,41 @@
         </div>
         <hr>
         <div>
-            <form id="formppl" method="get">
-                <label for="inputppl"> <h3>choose your target from: "people","films","starships","vehicles","planets":</h3></label>
-                <input type="text" id="inputppl" style="width: 60%;" placeholder="type your choice here,please">
-                <input type="summit" value="search">
+            <form id="form-confirming" method="get">
+                <label for="category-input"> 
+                    <h3>insert the number of the person to see the details:</h3>
+                </label>
+                <input type="text" id="people" name="people" style="width: 15%;" placeholder="inser number here,please">
+
+                <label for="category-input"> 
+                    <h3>insert the number of the filmto see the details:</h3>
+                </label>
+                <input type="text" id="film" name="film" style="width: 15%;" placeholder="inser number here,please">
+
+                <label for="category-input"> 
+                    <h3>insert the number of the vehicle to see the details:</h3>
+                </label>
+                <input type="text" id="vehicle" name="vehicle" style="width: 15%;" placeholder="inser number here,please">
+
+                <label for="category-input"> 
+                    <h3>insert the number of the starship to see the details:</h3>
+                </label>
+                <input type="text" id="starship" name="starship" style="width: 15%;" placeholder="inser number here,please">
+
+                <label for="category-input"> 
+                    <h3>insert the number of the planet to see the details:</h3>
+                </label>
+                <input type="text" id="planet" name="planet" style="width: 15%;" placeholder="inser number here,please">
+
+
+                <hr><input type="submit" style="text-align: center;" class="center" value="search">
 
             </form>
             <h2> The results we found for you: </h2>
         </div>
         
         <div class="process-container">
-            <div id="cast-container">
+            <!-- <div id="cast-container">
                 <h4>cast: </h4>
                 <ul id="cast-list"></ul>
                 
@@ -97,7 +121,7 @@
                 <h4>planets:</h4>
                 <ul id="-planets"></ul>
                 
-            </div>
+            </div> -->
 
         </div>
 

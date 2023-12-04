@@ -3,19 +3,112 @@
 // document.addEventListener('DOMContentLoaded', () => init())
 let num = Math.floor(Math.random() * 82)
 
-const form = document.querySelector('#form-query')
+const formLoad = document.querySelector('#form-loading-data')
 
-form.addEventListener('submit',event =>{
+formLoad.addEventListener('submit',event =>{
     event.preventDefault()
     console.log(event)
     formDataHandler(event.target)
     
 })
 
-function formDataHandler(dataArr){
+function loadingFormHandler(dataArr){
    
     console.log("click2",dataArr)
 
+}
+
+const formConfirm = document.querySelector("#form-confirming")
+formConfirm.addEventListener('submit', confirmingFormHandler)
+formConfirm.reset()
+function  confirmingFormHandler(event) {
+    event.preventDefault()
+
+    
+    const person = event.target.people.value
+    const film = event.target.film.value
+    const vehicle = event.target.vehicle.value
+    const starship = event.target.starship.value
+    const planet = event.target.planet.value
+
+    showPerson(person)
+    showFilm(film)
+    showVehicle(vehicle)
+    showStarship(starship)
+    showPlanet(planet)
+    
+    
+
+
+    
+    // let input = event.category.value
+    // switch (input) {
+    //     case "people" : renderPeople();
+    //     break;
+    //     default:
+    //         break;
+    // }
+}
+
+function renderPerson(data){
+    const div = document.querySelector('.process-container') 
+    const h4 = document.createElement('h4')
+    h4.textContent = "cast:"
+    div.appendChild(h4)
+    const content = document.createElement('div')
+    div.appendChild(content)
+    content.innerHTML =`
+        <p>${data.name}</p>
+        <p>${data.gender}</p>
+        <p>${data.height}</p>
+        <p>${data.homeworld}</p>
+        <p>${data.films}</p>
+        <hr>
+        
+    `
+     
+}
+
+function savePerson(data){
+    let personObj ={
+        name : data.name,
+        gender: data.gender,
+        height: data.height,
+        planet: data.homeworld,
+        films: data.films
+    }
+
+    fetch(" http://localhost:3000/people", {
+        method:'POST',
+        headers: {
+            'Content-Type' : 'application/json'
+        },
+        body:JSON.stringify(personObj)
+
+    })
+        .then(resp => resp.json())
+        .then(data => renderPerson(data) )
+
+}
+function showPerson(item){
+    
+    fetch(`https://swapi.dev/api/people/${item}`)
+        .then(resp => resp.json())
+        .then(data => savePerson(data) )
+
+}
+
+function showVehicle(item){
+
+}
+function showFilm(item){
+
+}
+function showStarship(item){
+    
+}
+function showPlanet(item){
+    
 }
 
 function initAll() {
@@ -69,12 +162,12 @@ async function getPlanets()
 }
 function renderPeople(data) {
     console.log("from renderPeople")
-    for (const person of data) {
+    for (let index in data) {
 
     
-    let ulpeople = document.querySelector("#people-list")
-    let character = document.createElement("li")
-    character.innerText = person.name 
+        let ulpeople = document.querySelector("#people-list")
+        let character = document.createElement("li")
+        character.innerText = `${index*1 + 1}: ${data[index].name}` 
     // let showBtn = createItemShowBtn()
     // character.appendChild(showBtn)
     // showBtn.addEventListener("click",(event) => {
