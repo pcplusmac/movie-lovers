@@ -1,20 +1,24 @@
-document.addEventListener('DOMContentLoaded', () => init())
+// console.log ("testing on this file")
+
+// document.addEventListener('DOMContentLoaded', () => init())
 let num = Math.floor(Math.random() * 82)
 
-const form = document.querySelector('#formQuery')
+const form = document.querySelector('#form-query')
+
 form.addEventListener('submit',event =>{
     event.preventDefault()
-    // console.log(event)
+    console.log(event)
     formDataHandler(event.target)
+    
 })
 
 function formDataHandler(dataArr){
-
+   
+    console.log("click2",dataArr)
 
 }
 
-
-function init() {
+function initAll() {
     getPeople()
     getFilms()
     getVehicles()
@@ -64,20 +68,27 @@ async function getPlanets()
 
 }
 function renderPeople(data) {
-    
+    console.log("from renderPeople")
     for (const person of data) {
 
     
     let ulpeople = document.querySelector("#people-list")
     let character = document.createElement("li")
-    character.innerText = person.name
-    
-    let showBtn = createItemShowBtn()
-    showBtn.addEventListener('click',person => {
-        //TODO: complete teh show logic here using person as parameter
-    })
+    character.innerText = person.name 
+    // let showBtn = createItemShowBtn()
+    // character.appendChild(showBtn)
+    // showBtn.addEventListener("click",(event) => {
+    //     //TODO: complete teh show logic here using person as parameter
+    //     event.preventDefault()
+    //     console.log("click")
+    //     const showBox = document.querySelector("div.display-container")
+    //     // console.log("from show button: ",person)
 
-    character.appendChild(showBtn)
+
+        
+    // })
+
+    
     ulpeople.appendChild(character)
     }
 }
@@ -90,11 +101,11 @@ function renderFilms(data){
         let lifilm = document.createElement('li')
         lifilm.innerText = film.title 
 
-        let showBtn = createItemShowBtn()
-        showBtn.addEventListener('click', film => {
-            //TODO: complete teh show logic here using film as parameter
-        })
-        lifilm.appendChild(showBtn)
+        // let showBtn = createItemShowBtn()
+        // showBtn.addEventListener('click', film => {
+        //     //TODO: complete teh show logic here using film as parameter
+        // })
+        // lifilm.appendChild(showBtn)
 
         ulfilms.appendChild(lifilm)
     }
@@ -111,11 +122,11 @@ function renderVehicles (data){
             let livehicle = document.createElement('li')
             livehicle.innerText=vehicle.name
 
-            let showBtn = createItemShowBtn()
-            livehicle.appendChild(showBtn)
-            showBtn.addEventListener('click',(vehicle)=> {
-                //TODO: complete the loic for showing item details
-            })
+            // let showBtn = createItemShowBtn()
+            // livehicle.appendChild(showBtn)
+            // showBtn.addEventListener('click',(vehicle)=> {
+            //     //TODO: complete the loic for showing item details
+            // })
 
 
             ulvehicles.appendChild(livehicle)
@@ -131,12 +142,12 @@ function renderStarships (data){
         let listarship = document.createElement('li')
         listarship.innerText = starship.name
 
-        let showBtn = createItemShowBtn()
-        showBtn.addEventListener('click',(starship)=> {
-            //TODO: complete the loic for showing item details
-        })
+        // let showBtn = createItemShowBtn()
+        // showBtn.addEventListener('click',(starship)=> {
+        //     //TODO: complete the loic for showing item details
+        // })
 
-        listarship.appendChild(showBtn)
+        // listarship.appendChild(showBtn)
         ulstarships.appendChild(listarship)
     }
 
@@ -152,12 +163,12 @@ function renderPlanets (data){
         let liplanet = document.createElement('li')
         liplanet.innerText = planet.name
 
-        let showBtn = createItemShowBtn()
-        showBtn.addEventListener('click',(planet)=> {
-            //TODO: complete the loic for showing item details
-        })
+        // let showBtn = createItemShowBtn()
+        // showBtn.addEventListener('click',(planet)=> {
+        //     //TODO: complete the loic for showing item details
+        // })
 
-        liplanet.appendChild(showBtn)
+        // liplanet.appendChild(showBtn)
         ulplanets.appendChild(liplanet)
     }
 
@@ -165,11 +176,7 @@ function renderPlanets (data){
     
 }
 
-{/* <p>${person.height}</p>
-        <p>${person.gender}</p>
-        <p></p>  */}
-
-// init()
+initAll()
 
 
 function createItemShowBtn () {
