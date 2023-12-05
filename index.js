@@ -187,9 +187,63 @@ function saveVehicle(data) {
         .then(vehicle => renderVehicle(vehicle))
 
 }
-function saveFilm(data) { }
-function saveStarship(data) { }
-function savePlanet(data) { }
+function saveFilm(data) { 
+    let filmObj = {
+        name: data.title,
+        episode: data.episode_id,
+        director: data.director,
+        releasedate: data.release_date,
+        characters: data.characters
+    }
+
+    fetch("http://localhost:3000/films", {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body:JSON.stringify(filmObj)
+    })
+        .then (resp => resp.json())
+        .then(film => renderFilm(film))
+}
+function saveStarship(data) {
+    let starshipObj = {
+        name: data.name,
+        model: data.model,
+        length: data.length,
+        crew: data.crew,
+        films: data.films
+    }
+
+    fetch(" http://localhost:3000/starships", {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body:JSON.stringify(starshipObj)
+    })
+        .then (resp => resp.json())
+        .then(starship => renderStarship(starship))
+ }
+function savePlanet(data) {
+    let planetObj = {
+        name: data.name,
+        gravity: data.gravity,
+        popullation: data.popullation,
+        diameter: data.diameter,
+        residents: data.residents
+    }
+
+    fetch("http://localhost:3000/planets", {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body:JSON.stringify(planetObj)
+    })
+        .then (resp => resp.json())
+        .then(planet => renderVehicle(planet))
+ }
 
 function fetchPerson(item) {
 
@@ -247,7 +301,7 @@ function listFilm() {
     fetch("http://localhost:3000/films")
         .then(resp => resp.json())
         .then(films => {
-            films.forEach(film => renderPerson(film))
+            films.forEach(film => renderFilm(film))
         })
 }
 
@@ -263,7 +317,7 @@ function listStarship() {
     fetch(" http://localhost:3000/starships")
         .then(resp => resp.json())
         .then(starships => {
-            starships.forEach(starship => renderPerson(starship))
+            starships.forEach(starship => renderStarship(starship))
         })
 }
 
@@ -271,7 +325,7 @@ function listPlanet() {
     fetch("http://localhost:3000/planets")
         .then(resp => resp.json())
         .then(planets => {
-            planets.forEach(planet => renderPerson(planet))
+            planets.forEach(planet => renderPlanet(planet))
         })
 }
 
