@@ -64,6 +64,11 @@ function deletePersonOnHub(data){
 
 }
 
+function deleteVehicleOnHub(data){}
+function deleteFilmOnHub(data){}
+function deleteStarshipOnHub(data){}
+function deletePlanetOnHub(data){}
+
 function renderPerson(data){
     const divContainer = document.querySelector('.process-container')
     divContainer.style.backgroundImage = `url("https://images.unsplash.com/photo-1618336753974-aae8e04506aa?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c3RhcndhcnN8ZW58MHx8MHx8fDA%3D")  `
@@ -93,7 +98,10 @@ function renderPerson(data){
      divSolo.appendChild(btnDelete)
 
 }
-
+function renderVehicle(data){}
+function renderFilm(data){}
+function renderStarship(data){}
+function renderPlanet(data){}
 
 
 function savePerson(data){
@@ -117,6 +125,12 @@ function savePerson(data){
         .then(person => renderPerson(person) )
 
 }
+
+function saveVehicle(data){}
+function saveFilm(data){}
+function saveStarship(data){}
+function savePlanet(data){}
+
 function fetchPerson(item){
     
     fetch(`https://swapi.dev/api/people/${item}`)
