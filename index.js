@@ -49,6 +49,20 @@ function  confirmingFormHandler(event) {
     //         break;
     // }
 }
+function deletePersonOnHub(data){
+    
+    let idNum = data.id
+    fetch(`http://localhost:3000/people/${idNum}`, {
+        method:'DELETE',
+        headers: {
+            'Content-Type' : 'application/json'
+        },
+
+    })
+        .then(resp => resp.json())
+        .then(person => console.log(person) )
+
+}
 
 function renderPerson(data){
     const divContainer = document.querySelector('.process-container')
@@ -73,27 +87,14 @@ function renderPerson(data){
 
      btnDelete.addEventListener('click',() => {
         btnDelete.parentNode.remove()
-        deleteDivSoloOnHub(data)
+        deletePersonOnHub(data)
      })
 
      divSolo.appendChild(btnDelete)
 
 }
 
-function deleteDivSoloOnHub(data){
-    
-    let idNum = data.id
-    fetch(`http://localhost:3000/people/${idNum}`, {
-        method:'DELETE',
-        headers: {
-            'Content-Type' : 'application/json'
-        },
 
-    })
-        .then(resp => resp.json())
-        .then(perosn => console.log(person) )
-
-}
 
 function savePerson(data){
     let personObj ={
@@ -113,7 +114,7 @@ function savePerson(data){
 
     })
         .then(resp => resp.json())
-        .then(perosn => renderPerson(person) )
+        .then(person => renderPerson(person) )
 
 }
 function fetchPerson(item){
@@ -144,11 +145,11 @@ function initAll() {
     getStarships()
     getPlanets()
 
-    getPerson()
+    listPerson()
     
 }
 
-function getPerson(){
+function listPerson(){
     fetch("http://localhost:3000/people")
         .then(resp => resp.json())
         .then (people => {
