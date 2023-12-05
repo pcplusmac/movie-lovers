@@ -146,6 +146,10 @@ function initAll() {
     getPlanets()
 
     listPerson()
+    listFilm()
+    listVehicle()
+    listStarship()
+    listPlanet()
     
 }
 
@@ -154,6 +158,38 @@ function listPerson(){
         .then(resp => resp.json())
         .then (people => {
             people.forEach(person => renderPerson(person))
+        })
+}
+
+function listFilm(){
+    fetch("http://localhost:3000/films")
+        .then(resp => resp.json())
+        .then (films => {
+            films.forEach(film => renderPerson(film))
+        })
+}
+
+function listVehicle(){
+    fetch("http://localhost:3000/vehicles")
+        .then(resp => resp.json())
+        .then (vehicles => {
+            vehicles.forEach(vehicle => renderPerson(vehicle))
+        })
+}
+
+function listStarship(){
+    fetch(" http://localhost:3000/starships")
+        .then(resp => resp.json())
+        .then (starships => {
+            starships.forEach(starship => renderPerson(starship))
+        })
+}
+
+function listPlanet(){
+    fetch("http://localhost:3000/planets")
+        .then(resp => resp.json())
+        .then (planets => {
+            planets.forEach(planet => renderPerson(planet))
         })
 }
 
@@ -200,109 +236,65 @@ async function getPlanets()
 function renderPeople(data) {
     console.log("from renderPeople")
     for (let index in data) {
-
-    
-        let ulpeople = document.querySelector("#people-list")
-        let character = document.createElement("li")
-        character.innerText = `${index*1 + 1}: ${data[index].name}` 
-    // let showBtn = createItemShowBtn()
-    // character.appendChild(showBtn)
-    // showBtn.addEventListener("click",(event) => {
-    //     //TODO: complete teh show logic here using person as parameter
-    //     event.preventDefault()
-    //     console.log("click")
-    //     const showBox = document.querySelector("div.display-container")
-    //     // console.log("from show button: ",person)
-
-
-        
-    // })
-
-    
-    ulpeople.appendChild(character)
+        let olpeople = document.querySelector("#people-list")
+        let lipeople = document.createElement("li")
+        lipeople.innerText = `${data[index].name}` 
+        olpeople.appendChild(lipeople)
     }
 }
  
 function renderFilms(data){
     // console.log(data)
-    data.forEach( film => {
+    // for (let index in data) {
 
-        let ulfilms = document.querySelector("#films-list")
+    //     let ulfilms = document.querySelector("#films-list")
+    //     let lifilm = document.createElement('li')
+    //     lifilm.innerText = `${index*1 + 1}: ${data[index].title}`
+    //     ulfilms.appendChild(lifilm)
+    // }
+    
+    data.forEach(film => {
+        let olfilms = document.querySelector("#films-list")
         let lifilm = document.createElement('li')
-        lifilm.innerText = film.title 
-
-        // let showBtn = createItemShowBtn()
-        // showBtn.addEventListener('click', film => {
-        //     //TODO: complete teh show logic here using film as parameter
-        // })
-        // lifilm.appendChild(showBtn)
-
-        ulfilms.appendChild(lifilm)
-    }
-        
-    )
+        lifilm.innerText = film.title
+        olfilms.appendChild(lifilm)
+    })
 }
 
 function renderVehicles (data){
     // console.log("vehicles informaiton: ",data)
-    data.forEach(
-        vehicle => {
+    for (const vehicle of data) {
             
-            let ulvehicles = document.querySelector("#vehicles-list")
+            let olvehicles = document.querySelector("#vehicles-list")
             let livehicle = document.createElement('li')
             livehicle.innerText=vehicle.name
-
-            // let showBtn = createItemShowBtn()
-            // livehicle.appendChild(showBtn)
-            // showBtn.addEventListener('click',(vehicle)=> {
-            //     //TODO: complete the loic for showing item details
-            // })
-
-
-            ulvehicles.appendChild(livehicle)
+            olvehicles.appendChild(livehicle)
         }
-    )
     
 }
 function renderStarships (data){
     console.log("ships: ",data)
-    data.forEach( starship => {
+    for (const starship of data) {
         
-        let ulstarships = document.querySelector("#starships-list")
+        let olstarships = document.querySelector("#starships-list")
         let listarship = document.createElement('li')
         listarship.innerText = starship.name
-
-        // let showBtn = createItemShowBtn()
-        // showBtn.addEventListener('click',(starship)=> {
-        //     //TODO: complete the loic for showing item details
-        // })
-
-        // listarship.appendChild(showBtn)
-        ulstarships.appendChild(listarship)
+        olstarships.appendChild(listarship)
     }
 
-    )
     
 
 }
 function renderPlanets (data){
     console.log("planet information",data)
-    data.forEach( planet => {
+    for (let planet of data) {
         
-        let ulplanets = document.querySelector("#planets-list")
+        let olplanets = document.querySelector("#planets-list")
         let liplanet = document.createElement('li')
         liplanet.innerText = planet.name
-
-        // let showBtn = createItemShowBtn()
-        // showBtn.addEventListener('click',(planet)=> {
-        //     //TODO: complete the loic for showing item details
-        // })
-
-        // liplanet.appendChild(showBtn)
-        ulplanets.appendChild(liplanet)
+        olplanets.appendChild(liplanet)
     }
 
-    )
     
 }
 
