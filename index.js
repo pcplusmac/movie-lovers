@@ -3,52 +3,68 @@
 // document.addEventListener('DOMContentLoaded', () => init())
 let num = Math.floor(Math.random() * 82)
 
-const formLoad = document.querySelector('#form-loading-data')
+const formLoad = document.querySelector("#form-loading-data")
 
 formLoad.addEventListener('submit', event => {
     event.preventDefault()
     console.log(event)
     formDataHandler(event.target)
+    // the funciton above i don't start composing yet
 
 })
 
-function loadingFormHandler(dataArr) {
 
-    console.log("click2", dataArr)
+const formPerson = document.querySelector('#person-form')
+const formFilm = document.querySelector('#film-form')
+const formVehicle = document.querySelector('#vehicle-form')
+const formStarship = document.querySelector('#starship-form')
+const formPlanet = document.querySelector('#planet-form')
 
-}
-
-const formConfirm = document.querySelector("#form-confirming")
-formConfirm.addEventListener('submit', confirmingFormHandler)
-// formConfirm.reset()
-function confirmingFormHandler(event) {
+formPerson.addEventListener('submit', (event) => {
     event.preventDefault()
-
-
     const person = event.target.people.value
-    const film = event.target.film.value
-    const vehicle = event.target.vehicle.value
-    const starship = event.target.starship.value
-    const planet = event.target.planet.value
-
     fetchPerson(person)
+    formPerson.reset()
+})
+
+formFilm.addEventListener('submit', (event) => {
+    event.preventDefault()
+    const film = event.target.film.value
     fetchFilm(film)
+    formFilm.reset()
+})
+formVehicle.addEventListener('submit', (event) => {
+    event.preventDefault()
+    const vehicle = event.target.vehicle.value
     fetchVehicle(vehicle)
+    formVehicle.reset()
+})
+formStarship.addEventListener('submit', (event) => {
+    event.preventDefault()
+    const starship = event.target.starship.value
     fetchStarship(starship)
+    formStarship.reset()
+})
+formPlanet.addEventListener('submit', (event) => {
+    event.preventDefault()
+    const planet = event.target.planet.value
     fetchPlanet(planet)
+    formPlanet.reset()
+})
+// function confirmingFormHandler(event) {
 
 
+//     console.log(event.target)
 
+//     // let input = event.category.value
+//     // switch (input) {
+//     //     case "people" : renderPeople();
+//     //     break;
+//     //     default:
+//     //         break;
+//     // }
+// }
 
-
-    // let input = event.category.value
-    // switch (input) {
-    //     case "people" : renderPeople();
-    //     break;
-    //     default:
-    //         break;
-    // }
-}
 function deletePersonOnHub(data) {
 
     let idNum = data.id
@@ -88,9 +104,9 @@ function renderPerson(data) {
     const ulCast = document.querySelector('#cast-list')
     const container = document.querySelector('#cast-container')
     container.style.backgroundSize = "cover"
-    container.style.backgroundRepeat ="no-repeat"
+    container.style.backgroundRepeat = "no-repeat"
     container.style.backgroundImage = `url("https://images.unsplash.com/photo-1618336753974-aae8e04506aa?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c3RhcndhcnN8ZW58MHx8MHx8fDA%3D")  `
-    
+
     const licard = document.createElement('li')
 
     ulCast.appendChild(licard)
@@ -119,13 +135,13 @@ function renderVehicle(vehicle) {
     const ulvehicle = document.querySelector('#vehicle-list')
     const container = document.querySelector('#vehicles-container')
     container.style.backgroundSize = "cover"
-    container.style.backgroundRepeat ="no-repeat"
+    container.style.backgroundRepeat = "no-repeat"
     container.style.backgroundImage = `url("https://media.istockphoto.com/id/501940544/photo/space-exploration-and-planetary-colonization.webp?b=1&s=170667a&w=0&k=20&c=tmsxg6JyxDSaByL4bAhXQzxNaQ33jYYedoIxhHwT398=")  `
     // ul.style.backgroundRepeat = "no-repeat"
-    ulvehicle .style.bacgroundSize = "contain"
+    ulvehicle.style.bacgroundSize = "contain"
     const livehicle = document.createElement('li')
 
-    ulvehicle .appendChild(livehicle)
+    ulvehicle.appendChild(livehicle)
     livehicle.innerHTML = `
         <p>name: ${vehicle.name}</p>
         <p>model: ${vehicle.model}</p>
@@ -150,7 +166,7 @@ function renderFilm(data) {
     const ulfilm = document.querySelector('#film-list')
     const container = document.querySelector('#films-container')
     container.style.backgroundSize = "cover"
-    container.style.backgroundRepeat ="no-repeat"
+    container.style.backgroundRepeat = "no-repeat"
     container.style.backgroundImage = `url("https://images.unsplash.com/photo-1561409106-fece1abb71cb?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fHN0YXJ3YXJzfGVufDB8fDB8fHww")`
     const lifilm = document.createElement('li')
 
@@ -176,15 +192,15 @@ function renderFilm(data) {
     lifilm.appendChild(btnDelete)
 }
 function renderStarship(data) {
-    const ul = document.querySelector('#starship-list')
+    const ulStarShip = document.querySelector('#starship-list')
     const container = document.querySelector('#starships-container')
     container.style.backgroundSize = "cover"
-    container.style.backgroundRepeat ="no-repeat"
+    container.style.backgroundRepeat = "no-repeat"
     container.style.backgroundImage = `url("https://media.istockphoto.com/id/1437048444/photo/stars-background-space-galaxy.webp?b=1&s=170667a&w=0&k=20&c=AJLOKVnS_TNiLyMbu06zwGxAU1-OzI7p3cIBoqJZESc=")`
-    const li = document.createElement('li')
+    const listars = document.createElement('li')
 
-    ul.appendChild(li)
-    li.innerHTML = `
+    ulStarShip.appendChild(listars)
+    listars.innerHTML = `
         <p>name: ${data.name}</p>
         <p>model: ${data.model}</p>
         <p>length: ${data.length}</p>
@@ -202,18 +218,18 @@ function renderStarship(data) {
         deleteStarshipOnHub(data)
     })
 
-    li.appendChild(btnDelete)
+    listars.appendChild(btnDelete)
 }
 function renderPlanet(data) {
-    const ul = document.querySelector('#planet-list')
+    const ulPlanet = document.querySelector('#planet-list')
     const container = document.querySelector('#planets-container')
     container.style.backgroundSize = "cover"
-    container.style.backgroundRepeat ="no-repeat"
+    container.style.backgroundRepeat = "no-repeat"
     container.style.backgroundImage = `url("https://media.istockphoto.com/id/1017193528/photo/futuristic-astronaut-on-alien-planet.webp?b=1&s=170667a&w=0&k=20&c=LN6D6rS8YTTaNe9S4BQFS7CZ2_6GnpqWWzNomR9388E=")`
-    const li = document.createElement('li')
+    let liplanet = document.createElement('li')
 
-    ul.appendChild(li)
-    li.innerHTML = `
+    
+    liplanet.innerHTML = `
         <p>name: ${data.name}</p>
         <p>model: ${data.model}</p>
         <p>length: ${data.length}</p>
@@ -221,6 +237,8 @@ function renderPlanet(data) {
         <p>films: ${data.films}</p>
          
     `
+
+    ulPlanet.appendChild(liplanet)
     const btnDelete = document.createElement("button")
     btnDelete.id = "buttonDelete"
     btnDelete.className = "right"
@@ -231,7 +249,7 @@ function renderPlanet(data) {
         deletePlanetOnHub(data)
     })
 
-    li.appendChild(btnDelete)
+    liplanet.appendChild(btnDelete)
 }
 
 
@@ -332,7 +350,7 @@ function savePlanet(data) {
         body: JSON.stringify(planetObj)
     })
         .then(resp => resp.json())
-        .then(planet => renderVehicle(planet))
+        .then(planet => renderPlanet(planet))
 }
 
 function fetchPerson(item) {
