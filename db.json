@@ -1,61 +1,125 @@
 {
   "people": [
     {
-      "name": "Luke Skywalker",
-      "gender": "male",
-      "height": "172",
-      "planet": "https://swapi.dev/api/planets/1/",
-      "films": [
-        "https://swapi.dev/api/films/1/",
-        "https://swapi.dev/api/films/2/",
-        "https://swapi.dev/api/films/3/",
-        "https://swapi.dev/api/films/6/"
+      "id": 1
+    }
+  ],
+  "films": [
+    {
+      "name": "A New Hope",
+      "episode": 4,
+      "director": "George Lucas",
+      "releasedate": "1977-05-25",
+      "characters": [
+        "https://swapi.dev/api/people/1/",
+        "https://swapi.dev/api/people/2/",
+        "https://swapi.dev/api/people/3/",
+        "https://swapi.dev/api/people/4/",
+        "https://swapi.dev/api/people/5/",
+        "https://swapi.dev/api/people/6/",
+        "https://swapi.dev/api/people/7/",
+        "https://swapi.dev/api/people/8/",
+        "https://swapi.dev/api/people/9/",
+        "https://swapi.dev/api/people/10/",
+        "https://swapi.dev/api/people/12/",
+        "https://swapi.dev/api/people/13/",
+        "https://swapi.dev/api/people/14/",
+        "https://swapi.dev/api/people/15/",
+        "https://swapi.dev/api/people/16/",
+        "https://swapi.dev/api/people/18/",
+        "https://swapi.dev/api/people/19/",
+        "https://swapi.dev/api/people/81/"
       ],
       "id": 1
     },
     {
-      "name": "C-3PO",
-      "gender": "n/a",
-      "height": "167",
-      "planet": "https://swapi.dev/api/planets/1/",
-      "films": [
-        "https://swapi.dev/api/films/1/",
-        "https://swapi.dev/api/films/2/",
-        "https://swapi.dev/api/films/3/",
-        "https://swapi.dev/api/films/4/",
-        "https://swapi.dev/api/films/5/",
-        "https://swapi.dev/api/films/6/"
-      ],
       "id": 2
     },
     {
-      "name": "Luke Skywalker",
-      "gender": "male",
-      "height": "172",
-      "planet": "https://swapi.dev/api/planets/1/",
-      "films": [
-        "https://swapi.dev/api/films/1/",
-        "https://swapi.dev/api/films/2/",
-        "https://swapi.dev/api/films/3/",
-        "https://swapi.dev/api/films/6/"
+      "name": "A New Hope",
+      "episode": 4,
+      "director": "George Lucas",
+      "releasedate": "1977-05-25",
+      "characters": [
+        "https://swapi.dev/api/people/1/",
+        "https://swapi.dev/api/people/2/",
+        "https://swapi.dev/api/people/3/",
+        "https://swapi.dev/api/people/4/",
+        "https://swapi.dev/api/people/5/",
+        "https://swapi.dev/api/people/6/",
+        "https://swapi.dev/api/people/7/",
+        "https://swapi.dev/api/people/8/",
+        "https://swapi.dev/api/people/9/",
+        "https://swapi.dev/api/people/10/",
+        "https://swapi.dev/api/people/12/",
+        "https://swapi.dev/api/people/13/",
+        "https://swapi.dev/api/people/14/",
+        "https://swapi.dev/api/people/15/",
+        "https://swapi.dev/api/people/16/",
+        "https://swapi.dev/api/people/18/",
+        "https://swapi.dev/api/people/19/",
+        "https://swapi.dev/api/people/81/"
       ],
-      "id": 5
+      "id": 3
+    },
+    {
+      "id": 4
     }
   ],
-  "films": [],
   "vehicles": [
     {
-      "name": "Sand Crawler",
-      "model": "Digger Crawler",
-      "length": "36.8 ",
-      "crew": "46",
-      "films": [
-        "https://swapi.dev/api/films/1/",
-        "https://swapi.dev/api/films/5/"
-      ],
       "id": 1
     }
   ],
-  "starships": [],
-  "planets": []
+  "starships": [
+    {
+      "id": 1
+    },
+    {
+      "id": 2
+    },
+    {
+      "id": 3
+    },
+    {
+      "id": 4
+    }
+  ],
+  "planets": [
+    {
+      "id": 1
+    },
+    {
+      "id": 2
+    },
+    {
+      "name": "Tatooine",
+      "gravity": "1 standard",
+      "diameter": "10465",
+      "residents": [
+        "https://swapi.dev/api/people/1/",
+        "https://swapi.dev/api/people/2/",
+        "https://swapi.dev/api/people/4/",
+        "https://swapi.dev/api/people/6/",
+        "https://swapi.dev/api/people/7/",
+        "https://swapi.dev/api/people/8/",
+        "https://swapi.dev/api/people/9/",
+        "https://swapi.dev/api/people/11/",
+        "https://swapi.dev/api/people/43/",
+        "https://swapi.dev/api/people/62/"
+      ],
+      "id": 3
+    },
+    {
+      "name": "Alderaan",
+      "gravity": "1 standard",
+      "diameter": "12500",
+      "residents": [
+        "https://swapi.dev/api/people/5/",
+        "https://swapi.dev/api/people/68/",
+        "https://swapi.dev/api/people/81/"
+      ],
+      "id": 4
+    }
+  ]
 }

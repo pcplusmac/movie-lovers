@@ -37,6 +37,37 @@ information of star war movies including actors, tools, files, etc.
 -- it is the place to keep all functions that get the pre-start data ready from server to be displayed on page. 
 -- it is to init the getter methods and the methods to render the page with dat.  
 
+## functions render the page for each item
+### listFilm()
+### listPerson()
+### listVehicle()
+### listStarship()
+### listPlanet()
+
+### fetchFilm(film)
+### fetchPerson(person)
+### fetchVehicle(vehicle)
+### fetchStarship(starship)
+### fetchPlanet(planet)
+
+### savePerson()
+### saveFilm()
+### saveVehicle()
+### saveStarship()
+### savePlanet()
+
+### renderPerson()
+### renderFilm()
+### renderVehicle()
+### renderStarship()
+### renderPlanet()
+
+### deletePerson()
+### deleteFilm()
+### deleteVehicle()
+### deleteStarship()
+### deletePlanet()
+
 ## other functions 
 ### createItemShowBtn() 
 -- this funciton is the reusable function to help with generting the button node element in js for html element. 

@@ -72,13 +72,13 @@ function deleteVehicleOnHub(vehicle) {
             'Content-Type': 'application/json'
         }
     })
- }
+}
 function deleteFilmOnHub(data) { }
 function deleteStarshipOnHub(data) { }
 function deletePlanetOnHub(data) { }
 
 function renderPerson(data) {
-    
+
     // data.forEach(item => {
     //     const ulCast = document.querySelector('#cast-list')
     //     const licard = document.createElement('li')
@@ -86,10 +86,13 @@ function renderPerson(data) {
     //     ulCast.appendChild(licard)
     // })
     const ulCast = document.querySelector('#cast-list')
-    ulCast.style.backgroundImage = `url("https://images.unsplash.com/photo-1618336753974-aae8e04506aa?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c3RhcndhcnN8ZW58MHx8MHx8fDA%3D")  `
+    const container = document.querySelector('#cast-container')
+    container.style.backgroundSize = "cover"
+    container.style.backgroundRepeat ="no-repeat"
+    container.style.backgroundImage = `url("https://images.unsplash.com/photo-1618336753974-aae8e04506aa?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c3RhcndhcnN8ZW58MHx8MHx8fDA%3D")  `
     
     const licard = document.createElement('li')
-    
+
     ulCast.appendChild(licard)
     licard.innerHTML = `
         <p>name: ${data.name}</p>
@@ -113,14 +116,17 @@ function renderPerson(data) {
 
 }
 function renderVehicle(vehicle) {
-    const ul = document.querySelector('#vehicle-list')
-    ul.style.backgroundImage = `url("https://media.istockphoto.com/id/501940544/photo/space-exploration-and-planetary-colonization.webp?b=1&s=170667a&w=0&k=20&c=tmsxg6JyxDSaByL4bAhXQzxNaQ33jYYedoIxhHwT398=")  `
+    const ulvehicle = document.querySelector('#vehicle-list')
+    const container = document.querySelector('#vehicles-container')
+    container.style.backgroundSize = "cover"
+    container.style.backgroundRepeat ="no-repeat"
+    container.style.backgroundImage = `url("https://media.istockphoto.com/id/501940544/photo/space-exploration-and-planetary-colonization.webp?b=1&s=170667a&w=0&k=20&c=tmsxg6JyxDSaByL4bAhXQzxNaQ33jYYedoIxhHwT398=")  `
     // ul.style.backgroundRepeat = "no-repeat"
-    ul.style.bacgroundSize = "contain"
-    const li = document.createElement('li')
-  
-    ul.appendChild(li)
-    li.innerHTML = `
+    ulvehicle .style.bacgroundSize = "contain"
+    const livehicle = document.createElement('li')
+
+    ulvehicle .appendChild(livehicle)
+    livehicle.innerHTML = `
         <p>name: ${vehicle.name}</p>
         <p>model: ${vehicle.model}</p>
         <p>length: ${vehicle.length}</p>
@@ -130,7 +136,7 @@ function renderVehicle(vehicle) {
     `
     const btnDelete = document.createElement("button")
     btnDelete.id = "buttonDelete"
-    btnDelete.className = "center"
+    btnDelete.className = "right"
     btnDelete.innerText = "delete"
 
     btnDelete.addEventListener('click', () => {
@@ -138,11 +144,95 @@ function renderVehicle(vehicle) {
         deleteVehicleOnHub(vehicle)
     })
 
+    livehicle.appendChild(btnDelete)
+}
+function renderFilm(data) {
+    const ulfilm = document.querySelector('#film-list')
+    const container = document.querySelector('#films-container')
+    container.style.backgroundSize = "cover"
+    container.style.backgroundRepeat ="no-repeat"
+    container.style.backgroundImage = `url("https://images.unsplash.com/photo-1561409106-fece1abb71cb?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fHN0YXJ3YXJzfGVufDB8fDB8fHww")`
+    const lifilm = document.createElement('li')
+
+    ulfilm.appendChild(lifilm)
+    lifilm.innerHTML = `
+        <p>name: ${data.name}</p>
+        <p>model: ${data.model}</p>
+        <p>length: ${data.length}</p>
+        <p>crew: ${data.crew}</p>
+        <p>films: ${data.films}</p>
+         
+    `
+    const btnDelete = document.createElement("button")
+    btnDelete.id = "buttonDelete"
+    btnDelete.className = "right"
+    btnDelete.innerText = "delete"
+
+    btnDelete.addEventListener('click', () => {
+        btnDelete.parentNode.remove()
+        deleteFilmOnHub(data)
+    })
+
+    lifilm.appendChild(btnDelete)
+}
+function renderStarship(data) {
+    const ul = document.querySelector('#starship-list')
+    const container = document.querySelector('#starships-container')
+    container.style.backgroundSize = "cover"
+    container.style.backgroundRepeat ="no-repeat"
+    container.style.backgroundImage = `url("https://media.istockphoto.com/id/1437048444/photo/stars-background-space-galaxy.webp?b=1&s=170667a&w=0&k=20&c=AJLOKVnS_TNiLyMbu06zwGxAU1-OzI7p3cIBoqJZESc=")`
+    const li = document.createElement('li')
+
+    ul.appendChild(li)
+    li.innerHTML = `
+        <p>name: ${data.name}</p>
+        <p>model: ${data.model}</p>
+        <p>length: ${data.length}</p>
+        <p>crew: ${data.crew}</p>
+        <p>films: ${data.films}</p>
+         
+    `
+    const btnDelete = document.createElement("button")
+    btnDelete.id = "buttonDelete"
+    btnDelete.className = "right"
+    btnDelete.innerText = "delete"
+
+    btnDelete.addEventListener('click', () => {
+        btnDelete.parentNode.remove()
+        deleteStarshipOnHub(data)
+    })
+
     li.appendChild(btnDelete)
- }
-function renderFilm(data) { }
-function renderStarship(data) { }
-function renderPlanet(data) { }
+}
+function renderPlanet(data) {
+    const ul = document.querySelector('#planet-list')
+    const container = document.querySelector('#planets-container')
+    container.style.backgroundSize = "cover"
+    container.style.backgroundRepeat ="no-repeat"
+    container.style.backgroundImage = `url("https://media.istockphoto.com/id/1017193528/photo/futuristic-astronaut-on-alien-planet.webp?b=1&s=170667a&w=0&k=20&c=LN6D6rS8YTTaNe9S4BQFS7CZ2_6GnpqWWzNomR9388E=")`
+    const li = document.createElement('li')
+
+    ul.appendChild(li)
+    li.innerHTML = `
+        <p>name: ${data.name}</p>
+        <p>model: ${data.model}</p>
+        <p>length: ${data.length}</p>
+        <p>crew: ${data.crew}</p>
+        <p>films: ${data.films}</p>
+         
+    `
+    const btnDelete = document.createElement("button")
+    btnDelete.id = "buttonDelete"
+    btnDelete.className = "right"
+    btnDelete.innerText = "delete"
+
+    btnDelete.addEventListener('click', () => {
+        btnDelete.parentNode.remove()
+        deletePlanetOnHub(data)
+    })
+
+    li.appendChild(btnDelete)
+}
 
 
 function savePerson(data) {
@@ -181,13 +271,13 @@ function saveVehicle(data) {
         headers: {
             'Content-Type': 'application/json'
         },
-        body:JSON.stringify(vehicleObj)
+        body: JSON.stringify(vehicleObj)
     })
-        .then (resp => resp.json())
+        .then(resp => resp.json())
         .then(vehicle => renderVehicle(vehicle))
 
 }
-function saveFilm(data) { 
+function saveFilm(data) {
     let filmObj = {
         name: data.title,
         episode: data.episode_id,
@@ -201,9 +291,9 @@ function saveFilm(data) {
         headers: {
             'Content-Type': 'application/json'
         },
-        body:JSON.stringify(filmObj)
+        body: JSON.stringify(filmObj)
     })
-        .then (resp => resp.json())
+        .then(resp => resp.json())
         .then(film => renderFilm(film))
 }
 function saveStarship(data) {
@@ -220,11 +310,11 @@ function saveStarship(data) {
         headers: {
             'Content-Type': 'application/json'
         },
-        body:JSON.stringify(starshipObj)
+        body: JSON.stringify(starshipObj)
     })
-        .then (resp => resp.json())
+        .then(resp => resp.json())
         .then(starship => renderStarship(starship))
- }
+}
 function savePlanet(data) {
     let planetObj = {
         name: data.name,
@@ -239,11 +329,11 @@ function savePlanet(data) {
         headers: {
             'Content-Type': 'application/json'
         },
-        body:JSON.stringify(planetObj)
+        body: JSON.stringify(planetObj)
     })
-        .then (resp => resp.json())
+        .then(resp => resp.json())
         .then(planet => renderVehicle(planet))
- }
+}
 
 function fetchPerson(item) {
 
