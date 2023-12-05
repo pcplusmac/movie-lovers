@@ -81,7 +81,17 @@ function renderPerson(data){
 }
 
 function deleteDivSoloOnHub(data){
-    event.preventDefault()
+    
+    let idNum = data.id
+    fetch(`http://localhost:3000/people/${idNum}`, {
+        method:'DELETE',
+        headers: {
+            'Content-Type' : 'application/json'
+        },
+
+    })
+        .then(resp => resp.json())
+        .then(perosn => console.log(person) )
 
 }
 
