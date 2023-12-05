@@ -42,10 +42,25 @@
         "https://swapi.dev/api/films/6/"
       ],
       "id": 3
+    },
+    {
+      "id": 4
     }
   ],
   "films": [],
-  "vehicles": [],
+  "vehicles": [
+    {
+      "name": "Sand Crawler",
+      "model": "Digger Crawler",
+      "length": "36.8 ",
+      "crew": "46",
+      "films": [
+        "https://swapi.dev/api/films/1/",
+        "https://swapi.dev/api/films/5/"
+      ],
+      "id": 1
+    }
+  ],
   "starships": [],
   "planets": []
 }

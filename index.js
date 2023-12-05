@@ -64,7 +64,15 @@ function deletePersonOnHub(data) {
 
 }
 
-function deleteVehicleOnHub(data) { }
+function deleteVehicleOnHub(vehicle) {
+    let idNum = vehicle.id
+    fetch(`http://localhost:3000/vehicles/${idNum}`, {
+        method: 'DELETE',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+ }
 function deleteFilmOnHub(data) { }
 function deleteStarshipOnHub(data) { }
 function deletePlanetOnHub(data) { }
@@ -98,7 +106,34 @@ function renderPerson(data) {
     divSolo.appendChild(btnDelete)
 
 }
-function renderVehicle(data) { }
+function renderVehicle(vehicle) {
+    const divContainer = document.querySelector('.process-container')
+    divContainer.style.backgroundImage = `url("https://media.istockphoto.com/id/501940544/photo/space-exploration-and-planetary-colonization.webp?b=1&s=170667a&w=0&k=20&c=tmsxg6JyxDSaByL4bAhXQzxNaQ33jYYedoIxhHwT398=")  `
+    const h4 = document.createElement('h4')
+    h4.textContent = "vehicle:"
+
+    const divSolo = document.createElement('div')
+    divSolo.appendChild(h4)
+    divContainer.appendChild(divSolo)
+    divSolo.innerHTML = `
+        <p>${vehicle.name}</p>
+        <p>${vehicle.model}</p>
+        <p>${vehicle.length}</p>
+        <p>${vehicle.crew}</p>
+        <p>${vehicle.films}</p>
+        <hr>   
+    `
+    const btnDelete = document.createElement("button")
+    btnDelete.id = "buttonDelete"
+    btnDelete.innerText = "delete"
+
+    btnDelete.addEventListener('click', () => {
+        btnDelete.parentNode.remove()
+        deleteVehicleOnHub(vehicle)
+    })
+
+    divSolo.appendChild(btnDelete)
+ }
 function renderFilm(data) { }
 function renderStarship(data) { }
 function renderPlanet(data) { }
