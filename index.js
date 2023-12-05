@@ -51,14 +51,15 @@ function  confirmingFormHandler(event) {
 }
 
 function renderPerson(data){
-    const divBlock = document.querySelector('.process-container')
-    divBlock.style.backgroundImage = `url("https://images.unsplash.com/photo-1618336753974-aae8e04506aa?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c3RhcndhcnN8ZW58MHx8MHx8fDA%3D")  `
+    const divContainer = document.querySelector('.process-container')
+    divContainer.style.backgroundImage = `url("https://images.unsplash.com/photo-1618336753974-aae8e04506aa?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c3RhcndhcnN8ZW58MHx8MHx8fDA%3D")  `
     const h4 = document.createElement('h4')
     h4.textContent = "cast:"
-    divBlock.appendChild(h4)
-    const content = document.createElement('div')
-    divBlock.appendChild(content)
-    content.innerHTML =`
+    
+    const divSolo = document.createElement('div')
+    divSolo.appendChild(h4)
+    divContainer.appendChild(divSolo)
+    divSolo.innerHTML =`
         <p>${data.name}</p>
         <p>${data.gender}</p>
         <p>${data.height}</p>
@@ -70,7 +71,17 @@ function renderPerson(data){
      btnDelete.id = "buttonDelete"
      btnDelete.innerText = "delete"
 
-     divBlock.appendChild(btnDelete)
+     btnDelete.addEventListener('click',() => {
+        btnDelete.parentNode.remove()
+        deleteDivSoloOnHub(data)
+     })
+
+     divSolo.appendChild(btnDelete)
+
+}
+
+function deleteDivSoloOnHub(data){
+    event.preventDefault()
 
 }
 
@@ -92,7 +103,7 @@ function savePerson(data){
 
     })
         .then(resp => resp.json())
-        .then(data => renderPerson(data) )
+        .then(perosn => renderPerson(person) )
 
 }
 function fetchPerson(item){
