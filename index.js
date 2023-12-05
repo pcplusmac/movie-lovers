@@ -31,11 +31,11 @@ function  confirmingFormHandler(event) {
     const starship = event.target.starship.value
     const planet = event.target.planet.value
 
-    showPerson(person)
-    showFilm(film)
-    showVehicle(vehicle)
-    showStarship(starship)
-    showPlanet(planet)
+    fetchPerson(person)
+    fetchFilm(film)
+    fetchVehicle(vehicle)
+    fetchStarship(starship)
+    fetchPlanet(planet)
     
     
 
@@ -52,7 +52,7 @@ function  confirmingFormHandler(event) {
 
 function renderPerson(data){
     const div = document.querySelector('.process-container')
-    // div.style.backgroundImage = `url("https://images.unsplash.com/photo-1618336753974-aae8e04506aa?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c3RhcndhcnN8ZW58MHx8MHx8fDA%3D")  `
+    div.style.backgroundImage = `url("https://images.unsplash.com/photo-1618336753974-aae8e04506aa?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c3RhcndhcnN8ZW58MHx8MHx8fDA%3D")  `
     const h4 = document.createElement('h4')
     h4.textContent = "cast:"
     div.appendChild(h4)
@@ -64,8 +64,7 @@ function renderPerson(data){
         <p>${data.height}</p>
         <p>${data.homeworld}</p>
         <p>${data.films}</p>
-        <hr>
-        
+        <hr>   
     `
      
 }
@@ -91,7 +90,7 @@ function savePerson(data){
         .then(data => renderPerson(data) )
 
 }
-function showPerson(item){
+function fetchPerson(item){
     
     fetch(`https://swapi.dev/api/people/${item}`)
         .then(resp => resp.json())
@@ -99,16 +98,16 @@ function showPerson(item){
 
 }
 
-function showVehicle(item){
+function fetchVehicle(item){
 
 }
-function showFilm(item){
+function fetchFilm(item){
 
 }
-function showStarship(item){
+function fetchStarship(item){
     
 }
-function showPlanet(item){
+function fetchPlanet(item){
     
 }
 
@@ -118,7 +117,17 @@ function initAll() {
     getVehicles()
     getStarships()
     getPlanets()
+
+    getPerson()
     
+}
+
+function getPerson(){
+    fetch("http://localhost:3000/people")
+        .then(resp => resp.json())
+        .then (people => {
+            people.forEach(person => renderPerson(person))
+        })
 }
 
 function getPeople(){
