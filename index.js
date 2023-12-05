@@ -78,53 +78,59 @@ function deleteStarshipOnHub(data) { }
 function deletePlanetOnHub(data) { }
 
 function renderPerson(data) {
-    const divContainer = document.querySelector('.process-container')
-    divContainer.style.backgroundImage = `url("https://images.unsplash.com/photo-1618336753974-aae8e04506aa?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c3RhcndhcnN8ZW58MHx8MHx8fDA%3D")  `
-    const h4 = document.createElement('h4')
-    h4.textContent = "cast:"
+    
+    // data.forEach(item => {
+    //     const ulCast = document.querySelector('#cast-list')
+    //     const licard = document.createElement('li')
+    //     licard = item
+    //     ulCast.appendChild(licard)
+    // })
+    const ulCast = document.querySelector('#cast-list')
+    ulCast.style.backgroundImage = `url("https://images.unsplash.com/photo-1618336753974-aae8e04506aa?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c3RhcndhcnN8ZW58MHx8MHx8fDA%3D")  `
+    
+    const licard = document.createElement('li')
+    
+    ulCast.appendChild(licard)
+    licard.innerHTML = `
+        <p>name: ${data.name}</p>
+        <p>gender: ${data.gender}</p>
+        <p>height: ${data.height}</p>
+        <p>home: ${data.homeworld}</p>
+        <p>films: ${data.films}</p>
+        <hr>
 
-    const divSolo = document.createElement('div')
-    divSolo.appendChild(h4)
-    divContainer.appendChild(divSolo)
-    divSolo.innerHTML = `
-        <p>${data.name}</p>
-        <p>${data.gender}</p>
-        <p>${data.height}</p>
-        <p>${data.homeworld}</p>
-        <p>${data.films}</p>
-        <hr>   
     `
     const btnDelete = document.createElement("button")
     btnDelete.id = "buttonDelete"
     btnDelete.innerText = "delete"
-
+    btnDelete.className = "right"
     btnDelete.addEventListener('click', () => {
         btnDelete.parentNode.remove()
         deletePersonOnHub(data)
     })
 
-    divSolo.appendChild(btnDelete)
+    licard.appendChild(btnDelete)
 
 }
 function renderVehicle(vehicle) {
-    const divContainer = document.querySelector('.process-container')
-    divContainer.style.backgroundImage = `url("https://media.istockphoto.com/id/501940544/photo/space-exploration-and-planetary-colonization.webp?b=1&s=170667a&w=0&k=20&c=tmsxg6JyxDSaByL4bAhXQzxNaQ33jYYedoIxhHwT398=")  `
-    const h4 = document.createElement('h4')
-    h4.textContent = "vehicle:"
-
-    const divSolo = document.createElement('div')
-    divSolo.appendChild(h4)
-    divContainer.appendChild(divSolo)
-    divSolo.innerHTML = `
-        <p>${vehicle.name}</p>
-        <p>${vehicle.model}</p>
-        <p>${vehicle.length}</p>
-        <p>${vehicle.crew}</p>
-        <p>${vehicle.films}</p>
-        <hr>   
+    const ul = document.querySelector('#vehicle-list')
+    ul.style.backgroundImage = `url("https://media.istockphoto.com/id/501940544/photo/space-exploration-and-planetary-colonization.webp?b=1&s=170667a&w=0&k=20&c=tmsxg6JyxDSaByL4bAhXQzxNaQ33jYYedoIxhHwT398=")  `
+    // ul.style.backgroundRepeat = "no-repeat"
+    ul.style.bacgroundSize = "contain"
+    const li = document.createElement('li')
+  
+    ul.appendChild(li)
+    li.innerHTML = `
+        <p>name: ${vehicle.name}</p>
+        <p>model: ${vehicle.model}</p>
+        <p>length: ${vehicle.length}</p>
+        <p>crew: ${vehicle.crew}</p>
+        <p>films: ${vehicle.films}</p>
+         
     `
     const btnDelete = document.createElement("button")
     btnDelete.id = "buttonDelete"
+    btnDelete.className = "center"
     btnDelete.innerText = "delete"
 
     btnDelete.addEventListener('click', () => {
@@ -132,7 +138,7 @@ function renderVehicle(vehicle) {
         deleteVehicleOnHub(vehicle)
     })
 
-    divSolo.appendChild(btnDelete)
+    li.appendChild(btnDelete)
  }
 function renderFilm(data) { }
 function renderStarship(data) { }
@@ -249,7 +255,7 @@ function listVehicle() {
     fetch("http://localhost:3000/vehicles")
         .then(resp => resp.json())
         .then(vehicles => {
-            vehicles.forEach(vehicle => renderPerson(vehicle))
+            vehicles.forEach(vehicle => renderVehicle(vehicle))
         })
 }
 

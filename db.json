@@ -29,22 +29,17 @@
       "id": 2
     },
     {
-      "name": "R2-D2",
-      "gender": "n/a",
-      "height": "96",
-      "planet": "https://swapi.dev/api/planets/8/",
+      "name": "Luke Skywalker",
+      "gender": "male",
+      "height": "172",
+      "planet": "https://swapi.dev/api/planets/1/",
       "films": [
         "https://swapi.dev/api/films/1/",
         "https://swapi.dev/api/films/2/",
         "https://swapi.dev/api/films/3/",
-        "https://swapi.dev/api/films/4/",
-        "https://swapi.dev/api/films/5/",
         "https://swapi.dev/api/films/6/"
       ],
-      "id": 3
-    },
-    {
-      "id": 4
+      "id": 5
     }
   ],
   "films": [],

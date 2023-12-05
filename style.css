@@ -31,7 +31,7 @@ div.process-container {
     font-weight: 600;
     font-style: italic;
     color:brown;
-    /* background-repeat: repeat-y; */
+    background-repeat: no-repeat;
     background-size:contain;
     /* background-image: url("https://media.istockphoto.com/id/1437048444/photo/stars-background-space-galaxy.webp?b=1&s=170667a&w=0&k=20&c=AJLOKVnS_TNiLyMbu06zwGxAU1-OzI7p3cIBoqJZESc="); */
 }
@@ -46,4 +46,9 @@ div.form-container {
     margin: 0;
     position: absolute;
     left: 50%;
+}
+.right {
+    margin:0;
+    position: absolute;
+    left: 80%
 }
