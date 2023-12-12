@@ -89,9 +89,38 @@ function deleteVehicleOnHub(vehicle) {
         }
     })
 }
-function deleteFilmOnHub(data) { }
-function deleteStarshipOnHub(data) { }
-function deletePlanetOnHub(data) { }
+function deleteFilmOnHub(data) { 
+    let idNum = data.id
+    fetch(`http://localhost:3000/films/${idNum}`, {
+        method: 'DELETE',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+    })
+}
+function deleteStarshipOnHub(data) {
+    let idNum = data.id
+    fetch(`http://localhost:3000/starships/${idNum}`,{
+         method: 'DELETE',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+
+    })
+
+    
+ }
+function deletePlanetOnHub(data) {
+    let idNum = data.id
+    fetch(`http://localhost:3000/planets/${idNum}`,{
+         method: 'DELETE',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+
+    })
+    
+ }
 
 function renderPerson(data) {
 
@@ -367,7 +396,7 @@ function fetchVehicle(item) {
         .then(vehicle => saveVehicle(vehicle))
 }
 function fetchFilm(item) {
-    fetch(`https://swapi.dev/api/films/${item}`)
+    fetch(`http://localhost:3000/films/${item}`)
         .then(resp => resp.json())
         .then(film => saveFilm(film))
 }

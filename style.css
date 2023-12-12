@@ -1,6 +1,7 @@
 body {
     background-color: rgb(25, 36, 187);
     color: rgb(10, 10, 10);
+    height: auto;
 }
 h1 {
     text-align: center;
