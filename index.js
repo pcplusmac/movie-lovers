@@ -312,7 +312,7 @@ function saveVehicle(data) {
         crew: data.crew,
         films: data.films
     }
-
+    console.log(vehicleObj)
     fetch("http://localhost:3000/vehicles", {
         method: 'POST',
         headers: {
@@ -391,6 +391,7 @@ function fetchPerson(item) {
 }
 
 function fetchVehicle(item) {
+    console.log(item)
     fetch(`https://swapi.dev/api/vehicles/${item}`)
         .then(resp => resp.json())
         .then(vehicle => saveVehicle(vehicle))
